@@ -77,23 +77,23 @@ node* delete_node(node* root,int key)
     if(key < root->data )
     {
         root->left = delete_node(root->left,key);
-        if(BF(root)==-2)
+        if(BF(root) == -2)
         {
-            if(BF(root->right)<=0)
-                root=RR(root);
+            if(BF(root->right) <= 0)
+                root = RR(root);
             else
-                root=RL(root);
+                root = RL(root);
         }
     }
     else if(key > root->data)
     {
         root->right = delete_node(root->right,key);
-        if(BF(root)==2)
+        if(BF(root) == 2)
         {
-             if(BF(root->left)>=0)
-                root=LL(root);
+             if(BF(root->left) >= 0)
+                root = LL(root);
              else
-                root=LR(root);
+                root = LR(root);
         }
     }
     else
